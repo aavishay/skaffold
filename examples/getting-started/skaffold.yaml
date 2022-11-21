@@ -1,8 +1,12 @@
 apiVersion: skaffold/v3
 kind: Config
 build:
+  insecureRegistries:
+    - localhost
+  local:
+    push: true
   artifacts:
-  - image: skaffold-example
+    - image: skaffold-example
 manifests:
   rawYaml:
-  - k8s-pod.yaml
+    - k8s-pod.yaml
